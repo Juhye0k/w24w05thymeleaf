@@ -6,10 +6,10 @@ import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
-class SongController(val service:SongService) {
+class SongController(val service: SongService) {
     @GetMapping("/song/random")
-    fun getRandomSong(model:Model):String{
-        model.addAttribute("songTitle",service.getRandomSong().title)
+    fun getRandomSong(model: Model): String {
+        model.addAttribute("song", service.getRandomSong())
         return "random"
     }
 }
